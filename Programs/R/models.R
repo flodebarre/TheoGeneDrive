@@ -19,6 +19,7 @@ times <- seq(0, tmax, by = 1) # Times for continuous time version
 pDinit <- 10^(-6) # Initial proportion of drive in the population
 yini  <- c(gDD = 0, g0D = 2*pDinit) # Genotypic frequencies
 
+# MODEL DEFINITIONS ####################################
 # ODEs, continuous time model, with conversion during meiosis
 CDuringMeiosis <- function(time, state, pars) {
   with(as.list(c(state, pars)), {
