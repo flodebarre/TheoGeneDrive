@@ -25,9 +25,9 @@ dy <- 0.5 # distance between arrow head and bar
 lna <- 0.1 # size of arrow head
 
 # PLOT ####################################################
-pdf("Pics/GeneDriveArticles.pdf", width = 5, height = 2)
+pdf("Pics/GeneDriveArticles.pdf", width = 4, height = 1.8)
 par(las = 1, mgp = c(1.5, 0.5, 0),
-    mar = c(2, 2.5, 0, 0), cex = 0.9)
+    mar = c(2, 2.5, 0.2, 0), cex = 0.9, cex.axis = 0.8, cex.lab=0.8)
 xmax <- max(tab$Publication.Years)
 plot(tab$Publication.Years, tab$records, xlab = "", ylab = "Number of publications", 
      type = "n", axes = FALSE)
@@ -35,7 +35,7 @@ axis(1, pos = 0, at = seq(min(tab$Publication.Years), max(tab$Publication.Years)
 axis(1, pos = 0, at = c(2017, seq(1990, 2015, by = 5)), lwd = 0, lwd.ticks = 1.5, tck = -0.03, las = 1)
 xmin <- 1990
 axis(2, pos = xmin)
-mtext("Year", side = 1, line = 1)
+mtext("Year", side = 1, line = 1, cex = 0.8)
 
 # Grid lines
 for(i in seq(10, 50, by = 10)){
@@ -52,7 +52,7 @@ lines(tabALP$Publication.Years, tabALP$records,
 # ADD LEGEND
 
 # Position
-y03 <- 15
+y03 <- 10
 x03 <- 1998
 # Text
 text(x03, y03, labels = "A. Burt suggested using homing
@@ -60,13 +60,13 @@ endonucleases for gene drives", cex = cext, pos =3)
 # Arrow
 arrows(x03, y03, 2003, tab[tab$Publication.Years==2003,"records"]+dy, length = lna)
 
-x14 <- 2007
-y14 <- 25
+x14 <- 2006
+y14 <- 23
 text(x14, y14, labels = "Esvelt et al. suggested using 
  CRISPR-Cas9 for gene drives", cex = cext, pos =3)
 arrows(x14, y14, 2014, tab[tab$Publication.Years==2014,"records"]+dy, length = lna)
 
-x15 <- 2013
+x15 <- 2012.5
 y15 <- 35
 text(x15, y15, labels = "First proofs of 
 concept in the lab", cex = cext, pos =3)
