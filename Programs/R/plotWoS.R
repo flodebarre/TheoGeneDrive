@@ -31,9 +31,9 @@ par(las = 1, mgp = c(1.5, 0.5, 0),
 xmax <- max(tab$Publication.Years)
 plot(tab$Publication.Years, tab$records, xlab = "", ylab = "Number of publications", 
      type = "n", axes = FALSE)
-axis(1, pos = 0, at = seq(min(tab$Publication.Years), max(tab$Publication.Years)), labels = FALSE, tck = -0.02, lwd.ticks = 0.8)
-axis(1, pos = 0, at = c(2017, seq(1990, 2015, by = 5)), lwd = 0, lwd.ticks = 1.5, tck = -0.03, las = 1)
 xmin <- 1990
+axis(1, pos = 0, at = seq(xmin, max(tab$Publication.Years)), labels = FALSE, tck = -0.035, lwd.ticks = 0.8)
+axis(1, pos = 0, at = seq(1990, 2015, by = 5), lwd = 0, lwd.ticks = 1.5, tck = -0.06, las = 1)
 axis(2, pos = xmin)
 mtext("Year", side = 1, line = 1, cex = 0.8)
 
